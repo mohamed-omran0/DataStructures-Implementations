@@ -33,6 +33,11 @@ public:
                 if (del == -1)del = k;
                 k++;
             } else {
+                if (del != -1) {
+                   used[del] = 1;
+                    arr[del] = x;
+                    sz++;
+                }
                 arr[k] = x;
                 used[k] = 1;
                 sz++;
@@ -40,11 +45,6 @@ public:
             }
             k %= cap;
             if (k == h_x)break;
-        }
-        if (del != -1) {
-            used[del] = 1;
-            arr[del] = x;
-            sz++;
         }
     }
 
